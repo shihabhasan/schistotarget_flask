@@ -8,4 +8,3 @@ celerybeat-schedule
 *.csv
 .env
 creat_db_schistotarget.py
-.gitignore
