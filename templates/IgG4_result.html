@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class=surface_output>
+<p> 
+<h2 style="background-color:#00476B; color:white"> <center> Surface protein prediction result </center> </h2> 
+</p>
+
+<!--- OUTPUT TABLE --->
+
+<center> 
+<table class="gridtable">
+<tr>
+	<td><b>Protein ID</b></td>
+	<td><b>Prediction</b></td>
+	<td><b>Probability</b></td>
+</tr>
+{% for line in surface_result%}
+
+<tr>
+	<td>{{line.split("\t")[0]}}</td>
+	<td>{{line.split("\t")[1]}}</td>
+	<td>{{line.split("\t")[2]}}</td>
+</tr>
+{% endfor %}
+</table>
+</center> 
+</div>
+
+{% endblock %}
+

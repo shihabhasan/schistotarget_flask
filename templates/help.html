@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class=output>
+<p> 
+<h2 style="background-color:#00476B; color:white"> <center> Instructions </center> </h2> 
+</p>
+
+<p>
+<h4>
+SchistoProt is a supervised machine learning based tool which uses Support Vector Machines (SVMs) to discriminate between i) surface and non-surface proteins and ii) secretory and non-secretory peptides. 
+Generated predictions are stored in a database, which facilitates the rapid reuse of predictions without rerunning the time-consuming SVM-based classification.
+This saves considerabe runtime if the same sequences are uploaded multiple times, e.g. by different users. 
+SchistoProt predictions are highly valuable for identifying genes important for host-parasite interaction and the discovery of novel drug and vaccine targets.
+</h4>
+</p>
+
+<div>
+<center> 
+  <img src="/static/workflow.png" alt="work flow" height="300">
+  </center> 
+</div>
+<p>
+<br></br>
+<h3>Input options<h3>
+<h4>
+SchistoProt takes the fasta formatted text or file. File extension can be any type (eg. .txt, .fas, .fasta etc.). File extension does not have any effect on SchistoProt.
+<br></br>
+<center> <img src="/static/gui.png" alt="gui" height="400"></center> 
+<br></br><br></br>
+
+If a valid email address is provided, an email containing the output result text file will be sent automatically. 
+So for large dataset, it is better to provide the email address.
+</h4>
+<br></br>
+<h3>Output<h3>
+<h4>
+After completing the task, a result page with a prediction table is appeared. 
+The prediction table is a list of Sequence ID of test protein sequences, category prediction and probability score.
+The result is also sent by email if a valid email address is provided during data submission. 
+
+</h4>
+</p>
+</div>
+
+<br></br><br></br>
+<div class=disclaimer >
+<b>Lutz Krause</b>
+<br>Computational Medical Genomics Group
+<br>The University of Queensland Diamantina Institute
+<br>Translational Research Institute
+<br>37 Kent Street, Woolloongabba, QLD 4102, Australia 
+<br>Email: l.krause@uq.edu.au
+</br>
+<br></br>
+<b>Shihab Hasan</b>
+<br>QIMR Berghofer Medical Research Institute
+<br>300 Herston Road, Herston, QLD 4006, Australia
+<br>Email: shihab.hasan@uqconnect.edu.au
+</br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!doctype html>
+<title>SchistoTarget</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css')}}">
+<script src="http://code.jquery.com/jquery.js"></script>
+
+        
+<style>
+    #center
+    {float: center;}
+</style>
+
+
+<div class=page>
+  <div id="text1" style="position:relative; left:750px; top:30px;">
+  <form id='home' method='post' action='home' enctype="multipart/form-data">
+  <input type='submit' value='Home' class="button" style="position:absolute;" />
+  </form>
+  
+  <form id='help' method='post' action='help' enctype="multipart/form-data">
+  <input type='submit' value='Help' class="button" style="position:absolute; left:109px;" />
+  </form>
+
+  <form id='home' method='post' action='contact' enctype="multipart/form-data">
+  <input type='submit' value='Contact' class="button" style="position:absolute; left:205px;" />
+  </form>
+  </div>
+  
+  
+  <div>
+  <img src="/static/schistotarget.png" alt="protein chain" style="position:relative; left:3px; top:3px; width:300px" >
+  </div>
+  
+<div align="justify">
+  <h1></h1>
+  <h2>Prediction of schsitosome immunoreactive proteins</h2>
+
+      {% block body %}
+      {% endblock %}
+</div>
+
+
+

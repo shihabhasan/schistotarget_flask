@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class=predict style="position:relative; left:250px; background:rgba(0, 102, 102,0.3);">
+<font color="rgba(0,63,71,1)" face="Copperplate Gothic Light" size="5"> <b> IgE reactivity prediction </b> </font><br></br>
+<form id='IgE_predict' method='post' action='IgE_predict' enctype="multipart/form-data"> <!-- action is the URL you want to move to next-->
+<p> 
+   <h3> Enter FASTA sequence(s) </h3> 
+   <textarea type='text' name='IgE_sequences' placeholder="FASTA sequence(s)" rows="15" cols="65"> </textarea> 
+   </p>
+   <p> 
+   <h3> Or, Upload FASTA File </h3>  
+   <input type='file' name='IgE_file' /> 
+   </p>
+   <p> </p> 
+   To get the result please enter your email address (optional): <input type="email" name="IgE_email" placeholder="yourname@example.com">
+   <p><br> </br> 
+   <input type='submit' value='Submit' class="submit_button" style="position:relative; left:420px;" /> <!-- value is the text that will appear on the button. --> 
+</p>
+</form>
+</form>
+</div>
+
+{% endblock %}

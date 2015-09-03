@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2 style="background-color:#00476B; color:white"> <center> Surface protein prediction for: {{ id }} </center> </h2>
+
+<script>
+function wait_for_update() {
+    $.ajax({ url: '{{ url_for('surface_status', id=id) }}',
+	     success: redirect,
+	     dataType: "text",
+             complete: wait_for_update,
+});
+}
+
+function redirect() {
+    window.location.replace('{{ url_for('surface_results', id=id) }}');
+}
+wait_for_update();
+
+
+</script>
+
+<p>This page will update when results are ready. Results will be also sent by email if email address is provided. Please check in email spam folder as well.</p>
+
+
+
+</div>
+
+
+
+<Script Language="JavaScript">
+// THESE TWO VARIABLES STORE THE TIME AND DATE WHEN THE PAGE IS LOADED
+var startDate = new Date();
+var startTime = startDate.getTime();
+
+// THIS FUNCTION CALCULATES THE SECONDS ELAPSED SINCE THE PAGE WAS LOADED
+function seconds_elapsed () 
+{ 
+var date_now = new Date (); 
+var time_now = date_now.getTime (); 
+var time_diff = time_now - startTime; 
+var seconds_elapsed = Math.floor ( time_diff / 1000 ); 
+
+return ( seconds_elapsed ); 
+} 
+
+// THIS FUNCTION TAKES THE SECONDS ELAPSED AND CONVERTS THEM FOR OUTPUT
+function time_spent () 
+{ 
+// TAKE THE SECONDS ELAPSED
+var secs = seconds_elapsed ();
+
+// CONVERT SECONDS TO MINUTES AND SECONDS
+var mins = Math.floor ( secs / 60 );
+secs -= mins * 60;
+
+// CONVERT MINUTES TO HOURS AND MINUTES
+var hour = Math.floor ( mins / 60 );
+mins -= hour * 60;
+
+// DISPLAY THE FINAL OUTPUT TIME STRING
+document.display.timeElapsed.value = pad ( hour ) + ":" + pad ( mins ) + ":" + pad ( secs );
+
+// RECURSIVELY RE-RUN THE FUNCTION EVERY SECOND
+setTimeout( "time_spent ()", 1000 ); 
+}
+
+// THIS FUNCTION INSERTS A LEADING ZERO (IF NECESSARY) TO PROVIDE UNIFORM OUTPUT
+function pad ( num )
+{
+return ( ( num > 9 ) ? num : "0" + num );
+}
+</Script>
+</head>
+
+<body onLoad="time_spent()">
+
+<br></br>
+<div class=disclaimer>
+ <center> 
+<form name="display" >
+<b>Time Elapsed:</b>
+<input name="timeElapsed" type="text" size=6 >
+</form>
+
+<br></br><br></br><br></br>
+ <img src="/static/spinner.gif" alt="protein chain" height="80"></center> 
+</div>
+
+{% endblock %}

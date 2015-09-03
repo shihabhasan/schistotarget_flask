@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+tmp
+tools
+logs
+celerybeat-schedule
+*.db
+*.csv
+.env
+creat_db_schistotarget.py

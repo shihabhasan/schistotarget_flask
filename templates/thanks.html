@@ -1,0 +1,45 @@
+<!doctype html>
+<title>ProtCat</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css')}}">
+
+
+<style>
+    #center
+    {float: center;}
+</style>
+
+
+<div class=page>
+  <div id="text1" style="position:relative; left:800px; top:20px;">
+  <form id='home' method='post' action='home' enctype="multipart/form-data">
+  <input type='submit' value='Home' class="button" style="position:absolute;" />
+  </form>
+  
+  <form id='help' method='post' action='help' enctype="multipart/form-data">
+  <input type='submit' value='Help' class="button" style="position:absolute; left:109px;" />
+  </form>
+
+  <form id='home' method='post' action='contact' enctype="multipart/form-data">
+  <input type='submit' value='Contact' class="button" style="position:absolute; left:205px;" />
+  </form>
+  </div>
+  
+  
+  <div>
+  <img src="/static/protcat.png" alt="protein chain" style="position:relative; left:3px; top:3px; width:220px" >
+  </div>
+  
+  <h1></h1>
+  <h2>Prediction of protein category based on protein features</h2>
+
+
+<br></br>
+<div class=surface_output>
+<p> 
+<h2 style="background-color:#C0C0C0; "> <center> Hi {{name}}, Thanks for contacting us. We will reply you soon. </center> </h2> 
+</p>
+
+
+</div>
+</div>
+
