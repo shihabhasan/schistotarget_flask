@@ -58,11 +58,11 @@ def run_immuno(filename, immuno_email):
     records.close()
     
     
-    #---------------------WORKING WITH SCIKIT-LEARN------------
+    #---------------------WORKING WITH SCIKIT-LEARN FOR IMMUNO-REACTIVE PROTEINS------------
     if parameter!="":
         parameter=StringIO(parameter)
-        train_para="immuno_train.csv"
-        train_label="immuno_train_labels.csv"
+        train_para="immuno.csv"
+        train_label="immuno_labels.csv"
         
         train_data=np.genfromtxt(train_para, delimiter=",")
         
@@ -152,11 +152,11 @@ def run_IgE(filename, IgE_email):
     records.close()
     
     
-    #---------------------WORKING WITH SCIKIT-LEARN------------
+    #---------------------WORKING WITH SCIKIT-LEARN FOR IgE------------
     if parameter!="":
         parameter=StringIO(parameter)
-        train_para="IgE_train.csv"
-        train_label="IgE_train_labels.csv"
+        train_para="IgE.csv"
+        train_label="IgE_labels.csv"
         
         train_data=np.genfromtxt(train_para, delimiter=",")
         
@@ -170,7 +170,7 @@ def run_IgE(filename, IgE_email):
 
         test_data_scaled = min_max_scaler.fit_transform(test_data)
 
-        clf = svm.SVC(kernel='rbf', C=8, gamma=2, probability=True)
+        clf = svm.SVC(kernel='rbf', C=8.0, gamma=2.0, probability=True)
 
         clf.fit(train_data_scaled, train_label)
 
@@ -246,11 +246,11 @@ def run_IgG1(filename, IgG1_email):
     records.close()
     
     
-    #---------------------WORKING WITH SCIKIT-LEARN------------
+    #---------------------WORKING WITH SCIKIT-LEARN FOR IgG1------------
     if parameter!="":
         parameter=StringIO(parameter)
-        train_para="IgG1_train.csv"
-        train_label="IgG1_train_labels.csv"
+        train_para="IgG1.csv"
+        train_label="IgG1_labels.csv"
         
         train_data=np.genfromtxt(train_para, delimiter=",")
         
@@ -264,7 +264,7 @@ def run_IgG1(filename, IgG1_email):
 
         test_data_scaled = min_max_scaler.fit_transform(test_data)
 
-        clf = svm.SVC(kernel='rbf', C=8, gamma=2, probability=True)
+        clf = svm.SVC(kernel='rbf', C=8.0, gamma=2.0, probability=True)
 
         clf.fit(train_data_scaled, train_label)
 
@@ -342,10 +342,10 @@ def run_IgG3(filename, IgG3_email):
     records.close()
     
     
-    #---------------------WORKING WITH SCIKIT-LEARN------------
+    #---------------------WORKING WITH SCIKIT-LEARN FOR IgG3------------
     if parameter!="":
         parameter=StringIO(parameter)
-        train_para="IgG3_train.csv"
+        train_para="IgG3.csv"
         train_label="IgG3_labels.csv"
         
         train_data=np.genfromtxt(train_para, delimiter=",")
@@ -360,7 +360,7 @@ def run_IgG3(filename, IgG3_email):
 
         test_data_scaled = min_max_scaler.fit_transform(test_data)
 
-        clf = svm.SVC(kernel='rbf', C=8, gamma=2, probability=True)
+        clf = svm.SVC(kernel='rbf', C=10.0, gamma=10.0, probability=True)
 
         clf.fit(train_data_scaled, train_label)
 
@@ -437,10 +437,10 @@ def run_IgG4(filename, IgG4_email):
     records.close()
     
     
-    #---------------------WORKING WITH SCIKIT-LEARN------------
+    #---------------------WORKING WITH SCIKIT-LEARN FOR IgG4------------
     if parameter!="":
         parameter=StringIO(parameter)
-        train_para="IgG4_train.csv"
+        train_para="IgG4.csv"
         train_label="IgG4_labels.csv"
         
         train_data=np.genfromtxt(train_para, delimiter=",")
@@ -455,7 +455,7 @@ def run_IgG4(filename, IgG4_email):
 
         test_data_scaled = min_max_scaler.fit_transform(test_data)
 
-        clf = svm.SVC(kernel='rbf', C=8, gamma=2, probability=True)
+        clf = svm.SVC(kernel='rbf', C=1.0, gamma=1.0, probability=True)
 
         clf.fit(train_data_scaled, train_label)
 
